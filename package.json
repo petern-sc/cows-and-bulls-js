@@ -1,0 +1,14 @@
+{
+  "name": "cows-and-bulls",
+  "version": "1.0.0",
+  "description": "Cows & Bulls Part I",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.4.3"
+  }
+}
