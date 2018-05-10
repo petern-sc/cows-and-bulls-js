@@ -1,26 +1,33 @@
 const matcher = (guess, secret) => {
-  let bulls = 0;
-  let potentialCows = 0;
   const guessArray = guess.split('');
   const secretArray = secret.split('');
 
-  guessArray.forEach((guessDigit, index) => {
-    if (guessDigit === secretArray[index]) {
+  return {
+    bulls: getBulls(guessArray, secretArray),
+    cows: getCows(guessArray, secretArray),
+  }
+}
+
+const getBulls = (guessArray, secretArray) => {
+  let bulls = 0;
+  guessArray.forEach((guessDigit, guessIndex) => {
+    if (guessDigit === secretArray[guessIndex]) {
       bulls += 1
     }
-    secretArray.forEach((secretDigit, index) => {
-      if (secretDigit === guessDigit) {
-        potentialCows += 1
+  });
+  return bulls;
+}
+
+const getCows = (guessArray, secretArray) => {
+  let cows = 0;
+  guessArray.forEach((guessDigit, guessIndex) => {
+    secretArray.forEach((secretDigit, secretIndex) => {
+      if ((secretDigit === guessDigit) && (guessIndex !== secretIndex)) {
+        cows += 1
       }
     })
   });
-
-  const cows = potentialCows - bulls;
-
-  return {
-    bulls: bulls,
-    cows: cows,
-  }
+  return cows;
 }
 
 module.exports = {
