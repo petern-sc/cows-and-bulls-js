@@ -1,4 +1,4 @@
-const matcher = (guess, secret) => {
+const matcher = ({ guess, secret }) => {
   const guessArray = guess.split('');
   const secretArray = secret.split('');
 
