@@ -2,9 +2,19 @@ const matcher = ({ guess, secret }) => {
   const guessArray = guess.split('');
   const secretArray = secret.split('');
 
-  return {
-    bulls: getBulls(guessArray, secretArray),
-    cows: getCows(guessArray, secretArray),
+  return new Match(
+    getCows(guessArray, secretArray),
+    getBulls(guessArray, secretArray)
+  )
+}
+
+class Match {
+  constructor(cows, bulls){
+    this.cows = cows;
+    this.bulls = bulls;
+  }
+  fullMatch() {
+    return this.bulls === 4
   }
 }
 
