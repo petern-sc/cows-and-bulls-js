@@ -1,6 +1,6 @@
 const secretGenerator = () => {
   let secret = '';
-  for (var i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     secret += getRandomInt(9)
   }
 

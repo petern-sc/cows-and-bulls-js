@@ -11,4 +11,4 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-run(secret, rl);
+run(secret, rl, console.log);
