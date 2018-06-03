@@ -1,10 +1,9 @@
 const { secretGenerator } = require("./secretGenerator");
 const { run } = require("./program");
+const readline = require("readline");
 
 const secret = secretGenerator();
 console.log('this is the secret', secret);
-
-const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
