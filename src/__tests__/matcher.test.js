@@ -1,4 +1,4 @@
-const { matcher } = require("./matcher");
+const { matcher } = require("../matcher");
 
 describe("matcher", () => {
   describe("bulls", () => {
@@ -39,6 +39,14 @@ describe("matcher", () => {
     describe("when there are no matches", () => {
       it("returns 0", () => {
         const { cows } = matcher({ guess: "1234", secret: "5678" });
+
+        expect(cows).toBe(0);
+      });
+    });
+
+    describe("when there are repeated numbers in the secret", () => {
+      it("returns 0 cows ", () => {
+        const { cows } = matcher({ guess: "9929", secret: "1224" });
 
         expect(cows).toBe(0);
       });

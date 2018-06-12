@@ -32,7 +32,8 @@ const getCows = (guessArray, secretArray) => {
   let cows = 0;
   guessArray.forEach((guessDigit, guessIndex) => {
     secretArray.forEach((secretDigit, secretIndex) => {
-      if ((secretDigit === guessDigit) && (guessIndex !== secretIndex)) {
+      const secretDigitAtGuessIndex = secretArray[guessIndex]
+      if ((secretDigit === guessDigit) && (guessDigit !== secretDigitAtGuessIndex) && (guessIndex !== secretIndex)) {
         cows += 1
       }
     })

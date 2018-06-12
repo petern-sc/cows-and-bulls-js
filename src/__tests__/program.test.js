@@ -1,4 +1,4 @@
-const { run } = require("./program");
+const { run } = require("../program");
 
 const questionStub = (values) => {
   let index = 0;

@@ -1,4 +1,4 @@
-const { secretGenerator } = require("./secretGenerator");
+const { secretGenerator } = require("../secretGenerator");
 
 describe("secretGenerator", () => {
   it("should generate a secret with length of 4", () => {
